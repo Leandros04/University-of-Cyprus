@@ -1,0 +1,36 @@
+public class DNASequencer {
+	
+	public static void main(String[] args)
+	{
+		StdOut.print("Give base strand: "); 
+		String BASE_STRAND = StdIn.readString(); 
+		
+		StdOut.print("Give strand: "); 
+		String STRAND = StdIn.readLine(); 
+		
+		int MIN_COVER = 4; 
+		int COVER_COUNT = 0; 
+		int MAX_COVER = 0; 
+		String COVER = ""; 
+		
+		for(int i = BASE_STRAND.length() -1; i >= 0; i--) 
+		{
+			for(int j = 0; j <= STRAND.length(); j++)
+			{
+				while(j < BASE_STRAND.length() - 1)
+				{
+					if(BASE_STRAND.charAt(BASE_STRAND.length()) == STRAND.charAt(j))
+					{
+						COVER_COUNT++;
+						COVER += STRAND.charAt(j);				
+					}
+				
+					if(COVER_COUNT > MAX_COVER)
+					{
+						MAX_COVER = COVER_COUNT;
+					}
+				}
+			}
+		}
+	}
+}

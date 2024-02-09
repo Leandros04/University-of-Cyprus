@@ -1,0 +1,53 @@
+
+public class ask1 {
+
+	public static void main(String[] args) {
+		String str; 
+		int c = 0;
+		String[] words = new String[110];
+		int[] apprnces = new int[110];
+		
+		boolean exist = false;
+		
+		int maxc = 0;
+		String maxw = "";
+		
+		while(!StdIn.isEmpty())
+		{
+			str = StdIn.readString();
+			
+			for(int i = 0; i < c; i++)
+			{
+				if(str.equals(words[i]))
+				{
+					exist = true;
+					break;
+				}
+				
+				if(exist)
+				{
+					apprnces[i]++;
+					
+				}else 
+				{
+					words[c] = str;
+					apprnces[c]++;
+					c++;
+				}
+				
+				if(apprnces[i] > apprnces[i+1])
+				{
+					maxc = apprnces[i];
+					maxw = words[i];
+				}else if(apprnces[i+1] > apprnces[i])
+				{
+					maxc = apprnces[i+1];
+					maxw = words[i+1];
+				}
+			}
+		}
+		StdOut.println(maxw + " " + maxc);
+		
+	}
+
+}

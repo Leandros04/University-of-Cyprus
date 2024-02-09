@@ -1,0 +1,36 @@
+public class DNASequencer {
+	
+	public static void main(String[] args)
+	{
+		StdOut.print("Give base strand: "); //Tells the user to input the strand that will be used as a base strand
+		String BASE_STRAND = StdIn.readString(); //Reads the base strand from the user
+		
+		StdOut.print("Give strand: "); //Tells the user to give a strand
+		String STRAND = StdIn.readLine(); //Reads the strand(s) from the user
+		
+		int MIN_COVER = 4; //The variable for the least cover possible
+		int COVER_COUNT = 0; //The variable that counts how many identical characters there are in the 2 strands
+		int MAX_COVER = 0; //The variable that counts the max amount of identical characters in the 2 strands
+		String COVER = ""; //The identical characters found in the 2 strands
+		
+		for(int i = BASE_STRAND.length(); i >= 0; i--)
+		{
+			for(int j = 0; j <= STRAND.length(); j++)
+			{
+				while(BASE_STRAND.charAt(0) != STRAND.charAt(0))
+				{
+					if(BASE_STRAND.charAt(BASE_STRAND.length()) == STRAND.charAt(j))
+					{
+						COVER_COUNT++;
+						COVER += STRAND.charAt(j);				
+					}
+				
+					if(COVER_COUNT > MAX_COVER)
+					{
+						MAX_COVER = COVER_COUNT;
+					}
+				}
+			}
+		}
+	}
+}

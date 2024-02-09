@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ask2&apos; to &apos;ask2a&apos;&#x0D;&#x0A;- Original project: &apos;Lab6&apos;&#x0D;&#x0A;- Original element: &apos;ask2&apos;&#x0D;&#x0A;- Renamed element: &apos;ask2a&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Rename similarly named elements&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ask2&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/&lt;{ask2.java[ask2" matchStrategy="1" name="ask2a" qualified="false" references="true" similarDeclarations="true" stamp="1695712903211" textual="true" version="1.0"/>
+</session>

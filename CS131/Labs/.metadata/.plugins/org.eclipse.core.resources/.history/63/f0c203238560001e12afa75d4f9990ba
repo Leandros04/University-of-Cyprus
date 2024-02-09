@@ -1,0 +1,64 @@
+public class DNASequencer {
+	
+	public static void main(String[] args)
+	{
+		String BASE_STRAND = args[0];
+		
+		boolean invalidInput = false;
+		
+		StdOut.print(args.length);
+		for(int i = 0; i < BASE_STRAND.length(); i++)
+		{
+			if(BASE_STRAND.charAt(i) != 'a' && BASE_STRAND.charAt(i) != 'c' && BASE_STRAND.charAt(i) != 'g' && BASE_STRAND.charAt(i) != 't')
+			{
+				invalidInput = true;
+			}
+		}
+		
+		String STRAND = "";
+		
+		for(int i = 0; i <= args.length; i++)
+		{
+			STRAND = args[i];
+				
+			for(int j = 0; j < STRAND.length() - 1; j++)
+			{
+				if(STRAND.charAt(j) != 'a' && STRAND.charAt(j) != 'c' && STRAND.charAt(j) != 'g' && STRAND.charAt(j) != 't')
+				{
+					invalidInput = true;
+				}
+			}
+		}
+		
+		
+		if(invalidInput == true)
+		{
+			System.out.print("Wrong Input.");
+		}
+		
+		int MIN_COVER = 4; 
+		int COVER_COUNT = 0; 
+		int MAX_COVER = 0; 
+		String COVER = ""; 
+		
+		for(int i = BASE_STRAND.length() -1; i >= 0; i--) 
+		{
+			for(int j = 0; j < STRAND.length(); j++)
+			{
+				while(j < BASE_STRAND.length())
+				{
+					if(BASE_STRAND.charAt(BASE_STRAND.length() -1) == STRAND.charAt(j))
+					{
+						COVER_COUNT++;
+						COVER += STRAND.charAt(j);				
+					}
+				
+					if(COVER_COUNT > MAX_COVER)
+					{
+						MAX_COVER = COVER_COUNT;
+					}
+				}
+			}
+		}
+	}
+}

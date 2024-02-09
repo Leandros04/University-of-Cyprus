@@ -1,0 +1,17 @@
+public class VentingMachine
+{
+	public static void main(String args)
+	{
+		StdOut.println("Dose poso: ");
+		int poso = StdIn.readInt();
+		
+		double anapsiktika = 0.80;
+		double pagota = 0.40;
+		double sokolates = 0.35;
+		
+		StdOut.println("PRWTH EPILOGI\n");
+		
+		int anaps1, pagota1, sokol1;
+		if(poso )
+	}
+}
